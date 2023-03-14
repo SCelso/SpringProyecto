@@ -2,60 +2,67 @@ package com.example.proyectospring.paintings.entities;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "paintings")
 public class Painting {
 
     @Id
-    @GeneratedValue
-    private Integer id;
-    @Column(nullable = false,  length = 45)
-    private String name;
-    @Column(nullable = false,  length = 45)
-    private String date;
-    @Column(nullable = false,  length = 45)
-    private String author;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Integer getId() {
+    @NotNull
+    private String nombre;
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fecha;
+    @NotNull
+    private String autor;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDate() {
-        return date;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     @Override
     public String toString() {
         return "Painting{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", date='" + date + '\'' +
-                ", author='" + author + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", fecha=" + fecha +
+                ", autor='" + autor + '\'' +
                 '}';
     }
 }
