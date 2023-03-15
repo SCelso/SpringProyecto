@@ -1,4 +1,4 @@
-package com.gestion.proyectospring.entidades;
+package com.gestion.proyectospring.Cuadros.entidades;
 
 import java.util.Date;
 
@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
