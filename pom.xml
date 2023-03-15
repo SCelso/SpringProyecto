@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gestion.cuadros</groupId>
-	<artifactId>mini-control-cuadros</artifactId>
+	<artifactId>cuadros</artifactId>
 	<version>1.0</version>
-	<name>mini-control-cuadros</name>
+	<name>cuadros</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
