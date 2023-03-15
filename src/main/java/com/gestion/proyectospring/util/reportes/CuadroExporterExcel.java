@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
-import com.gestion.proyectospring.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;

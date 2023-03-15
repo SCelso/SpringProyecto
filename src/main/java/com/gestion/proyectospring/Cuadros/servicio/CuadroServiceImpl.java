@@ -1,15 +1,15 @@
-package com.gestion.proyectospring.servicio;
+package com.gestion.proyectospring.Cuadros.servicio;
 
 import java.util.List;
 
-import com.gestion.proyectospring.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.repositorios.CuadroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gestion.proyectospring.repositorios.CuadroRepository;
 
 @Service
 public class CuadroServiceImpl implements CuadroService {

@@ -1,8 +1,8 @@
-package com.gestion.proyectospring.repositorios;
+package com.gestion.proyectospring.Cuadros.repositorios;
 
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.gestion.proyectospring.entidades.Cuadro;
 
 public interface CuadroRepository extends PagingAndSortingRepository<Cuadro, Long>{
 

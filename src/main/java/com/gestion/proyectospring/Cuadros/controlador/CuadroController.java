@@ -1,4 +1,4 @@
-package com.gestion.proyectospring.controlador;
+package com.gestion.proyectospring.Cuadros.controlador;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -10,7 +10,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import com.gestion.proyectospring.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.servicio.CuadroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.gestion.proyectospring.servicio.CuadroService;
 import com.gestion.proyectospring.util.paginacion.PageRender;
 import com.gestion.proyectospring.util.reportes.CuadroExporterExcel;
 import com.gestion.proyectospring.util.reportes.CuadroExporterPDF;
@@ -64,7 +64,7 @@ public class CuadroController {
 	}
 	
 	@GetMapping("/form")
-	public String mostrarFormularioDeRegistrarCliente(Map<String,Object> modelo) {
+	public String mostrarFormularioDeRegistrarCuadro(Map<String,Object> modelo) {
 		Cuadro cuadro = new Cuadro();
 		modelo.put("cuadro", cuadro);
 		modelo.put("titulo", "Registro de cuadros");
@@ -74,7 +74,8 @@ public class CuadroController {
 	@PostMapping("/form")
 	public String guardarCuadro(@Valid Cuadro cuadro, BindingResult result, Model modelo, RedirectAttributes flash, SessionStatus status) {
 		if(result.hasErrors()) {
-			modelo.addAttribute("titulo", "Registro de cliente");
+			System.out.println(result.getAllErrors());
+			modelo.addAttribute("titulo", "Registro de cuadro");
 			return "form";
 		}
 		
@@ -107,7 +108,7 @@ public class CuadroController {
 	}
 	
 	@GetMapping("/eliminar/{id}")
-	public String eliminarCliente(@PathVariable(value = "id") Long id,RedirectAttributes flash) {
+	public String eliminarCuadro(@PathVariable(value = "id") Long id,RedirectAttributes flash) {
 		if(id > 0) {
 			cuadroService.delete(id);
 			flash.addFlashAttribute("success", "Cuadro eliminado con exito");

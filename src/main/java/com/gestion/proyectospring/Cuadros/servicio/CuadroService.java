@@ -1,8 +1,8 @@
-package com.gestion.proyectospring.servicio;
+package com.gestion.proyectospring.Cuadros.servicio;
 
 import java.util.List;
 
-import com.gestion.proyectospring.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

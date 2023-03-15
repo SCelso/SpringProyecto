@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.gestion.proyectospring.entidades.Cuadro;
+import com.gestion.proyectospring.Cuadros.entidades.Cuadro;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Font;
